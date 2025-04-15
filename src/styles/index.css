@@ -52,10 +52,11 @@
   
   .task-list li {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
   }
   
   .task-list li:last-child {
@@ -70,5 +71,17 @@
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
     cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
   }
   
+  .task-list li:hover .delete-button {
+    opacity: 1;
+  }
+
+  .task-counter {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }

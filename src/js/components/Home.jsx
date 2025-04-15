@@ -33,7 +33,7 @@ function App() {
         <div className="input-group">
           <input
             type="text"
-            placeholder="Agregar nueva Tarea"
+            placeholder= "No hay tareas, añadir tareas"
             value={task}
             onChange={(e) => setTask(e.target.value)} onKeyPress={handleKeyPress}
           />
@@ -49,6 +49,13 @@ function App() {
             </li>
           ))}
         </ul>
+        <div className="input-group">
+            {/* ...input y botón */}
+        </div>
+        <p className="task-counter">Tareas: {tasks.length}</p>
+        <ul className="task-list">
+          {/* ...tareas */}
+          </ul>
       </div>
     </div>
   );
