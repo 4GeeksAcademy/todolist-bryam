@@ -57,7 +57,7 @@ ul {
     padding-bottom: 5px;
 }
 span {
-    visibility: visible; 
+    visibility: hidden; 
     padding: 0.5rem 1rem;
     background: #d9534f;
     color: #fff;

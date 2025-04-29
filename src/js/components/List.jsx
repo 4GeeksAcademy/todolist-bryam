@@ -6,7 +6,7 @@ export const List = () => {
     const [workList, setWorkList] = useState([])
     
     useEffect(() => {
-        if (workList.length == 0) setWorkList(['Agregar una tarea'] )
+        if (workList.length == 0) setWorkList(['No tasks, add tasks!!!'] )
     }, [workList])
 
     const handleWorkChange = (e) => {
@@ -15,7 +15,7 @@ export const List = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (workList.includes("")) {
+        if (workList.includes("No tasks, add tasks!!!")) {
             setWorkList([works])
         } else {
             setWorkList([...workList, works])
@@ -25,7 +25,7 @@ export const List = () => {
 
     const handleKeyDown = (e) => {
         if (e.code == 'enter') {
-            if (workList.includes("")) {
+            if (workList.includes("No tasks, add tasks!!!")) {
                 setWorkList([works])
             } else {
                 setWorkList([...workList, works])
@@ -43,14 +43,14 @@ export const List = () => {
         <>
             <div className="tareas">
                 <form onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
-                    <input type="text" placeholder="Nueva tarea" value={works} onChange={handleWorkChange}/>
+                    <input type="text" placeholder="What needs to do?" value={works} onChange={handleWorkChange}/>
                 </form>
 
                 <ul>
                     {workList.map((el, i) => 
                     <li key={i}>{el}
                         <span onClick={() => handleClick(i)} 
-                            className="text-danger"> Delete </span>
+                            className="text-danger"> X </span>
                     </li>)}
                 </ul>
             </div>
